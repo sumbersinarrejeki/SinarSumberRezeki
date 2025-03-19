@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinar Sumber Rezeki</title>
+    <link rel="icon" type="image/jpg" href="logo4.jpg">
+    <link rel="stylesheet" href="style 2.css">
+    <script src="https://kit.fontawesome.com/02138bd525.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <img src="logo4.jpg" alt="Logo SSR" class="logo">
+            <h1>SINAR SUMBER REZEKI</h1>
+        </div>
+        <div class="cart" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Popup -->
+    <div class="cart-popup" id="cart-popup">
+        <h3>Keranjang Belanja</h3>
+        <div class="cart-items"></div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Produk Section -->
+    <h2>Produk</h2>
+    <main>
+        <section class="home">
+            <div class="container">
+                
+                <!-- Produk 1: BALI BITUMEN -->
+                <div class="card product-card">
+                    <h2 class="product-name">BALI BITUMEN</h2>
+                    <img src="catalog bali bitumen.jpeg" alt="BALI BITUMEN">
+                    <label>Pilih warna:</label>
+                    <select class="modal-brand" onchange="updatePrice(this)">
+                        <option value="395000">bali bitumen - gradasi hitam</option>
+                        <option value="395000">bali bitumen - gradasi merah</option>
+                        <option value="395000">bali bitumen - gradasi biru</option>
+                        <option value="395000">bali bitumen - gradasi coklat</option>
+                        <option value="395000">bali bitumen - gradasi hijau</option>
+                        <option value="395000">bali bitumen - gradasi abu abu</option>
+                    </select>
+                    <p class="modal-product-price">Rp 395.000</p>
+                    <button class="buy-button" onclick="addToCart(this)">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+
+                <!-- Produk 2: MAXSIM -->
+                <div class="card product-card">
+                    <h2 class="product-name">MAXSIM</h2>
+                    <img src="catalog maxim.jpeg" alt="MAXIM">
+                    <label>Pilih warna:</label>
+                    <select class="modal-brand" onchange="updatePrice(this)">
+                        <option value="415000"> maxim - ash browm</option>
+                        <option value="415000">maxim - dark brown</option>
+                        <option value="415000">maxim - slate</option>
+                        <option value="415000">maxim - charcoal</option>
+                        <option value="415000">maxim - harbour blue</option>
+                        <option value="415000">maxim - cedar</option>
+                        <option value="415000">maxim - sierra grey</option>
+                        <option value="415000">maxim - dark black</option>
+                    </select>
+                    <p class="modal-product-price">Rp 415.000</p>
+                    <button class="buy-button" onclick="addToCart(this)">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+
+                <!-- Produk 3: SEETON -->
+                <div class="card product-card">
+                    <h2 class="product-name">SEETON</h2>
+                    <img src="catalog seeton.jpeg" alt="SEETON">
+                    <label>Pilih warna:</label>
+                    <select class="modal-brand" onchange="updatePrice(this)">
+                        <option value="420000" data-warna="estate gray">Seeton - Estate Gray</option>
+                        <option value="420000" data-warna="onyx black">Seeton - Onyx Black</option>
+                        <option value="420000" data-warna="bark brown">Seeton - Bark Brown</option>
+                        <option value="420000" data-warna="desert tan">Seeton - Desert Tan</option>
+                        <option value="420000" data-warna="asian red">Seeton - Asian Red</option>
+                        <option value="420000" data-warna="cloudy gray">Seeton - Cloudy Gray</option>
+                    </select>
+                    
+                    <p class="modal-product-price">Rp 420.000</p>
+                    <button class="buy-button" onclick="addToCart(this)">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+
+            </div>  
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2 class="footer-logo">Sinar Sumber Rezeki</h2>
+                <p>PT Sinar Sumber Rezeki (SSR) adalah perusahaan konstruksi yang berdiri sejak 2022...</p>
+            </div>
+            <div class="footer-links">
+                <h4>Perusahaan</h4>
+                <ul>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Produk & Layanan</a></li>
+                    <li><a href="#">Karir</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Hubungi Kami</h4>
+                <p><a href="mailto:sinarsumberrezeki@gmail.com">sinarsumberrezeki@gmail.com</a></p>
+                <p>+62 821-4616-9266</p>
+            </div>
+        </div>
+    </footer>
+
+   <script>
+let cart = [];
+const whatsappNumber = "6282146169266"; 
+
+function addToCart(button) {
+    let productCard = button.closest(".product-card");
+    let productName = productCard.querySelector(".product-name").textContent;
+
+    // Ambil merk dan harga dari dropdown
+    let selectElement = productCard.querySelector(".modal-brand");
+    let selectedOption = selectElement.options[selectElement.selectedIndex];
+
+    let merk = selectedOption.textContent; // Nama merk + warna
+    let harga = selectedOption.value; // Harga
+
+    // Tambahkan ke dalam array keranjang
+    cart.push({ name: productName, merk: merk, price: harga });
+
+    // Perbarui tampilan keranjang
+    updateCart();
+}
+
+function updateCart() {
+    document.querySelector(".cart-count").textContent = cart.length;
+    let cartItems = document.querySelector(".cart-items");
+    
+    // Perbarui daftar item dalam keranjang
+    cartItems.innerHTML = cart.map((item, index) => 
+        `<div>${item.name} (${item.merk}) - Rp ${parseInt(item.price).toLocaleString()} 
+        <button onclick="removeFromCart(${index})">❌</button></div>`
+    ).join("");
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function toggleCart() {
+    document.getElementById('cart-popup').classList.toggle("show");
+}
+
+function checkout() {
+    let message = "Halo, saya ingin membeli:\n" + cart.map((item, i) => 
+        `${i+1}. ${item.name} (${item.merk}) - Rp ${parseInt(item.price).toLocaleString()}`
+    ).join("\n");
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+}
+
+   </script>
+</body>
+</html>
