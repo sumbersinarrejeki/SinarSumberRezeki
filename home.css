@@ -16,11 +16,10 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Supaya elemen kiri dan kanan sejajar */
+  justify-content: space-between; /* Logo di kiri, cart di kanan */
   padding: 15px 40px;
   background-color: #000;
   color: white;
-  flex-wrap: nowrap; /* Mencegah pindah ke baris baru */
 }
 
 /* Grup Logo dan Nama */
@@ -32,16 +31,16 @@ body {
 
 /* Logo */
 .logo {
-  width: 50px; /* Sesuaikan ukuran */
+  width: 50px; /* Ukuran logo */
   height: auto;
 }
 
 /* Judul */
-.header-left h1 {
-  font-size: 22px;
+.brand-title {
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-  white-space: nowrap; /* Mencegah teks turun ke baris baru */
+  white-space: nowrap; /* Biar tidak turun ke bawah */
 }
 
 /* Cart */
@@ -52,10 +51,25 @@ body {
   cursor: pointer;
 }
 
-/* Icon Cart */
+/* Icon Keranjang */
 .cart-icon {
   font-size: 20px;
 }
+
+/* Angka dalam Keranjang */
+.cart-count {
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
 
 /* Angka di Keranjang */
 .cart-count {
