@@ -365,3 +365,6 @@ body{
     margin-left: 0; /* Hapus margin kiri agar tombol tidak bergeser */
   }
 }
+html {
+  touch-action: manipulation;
+}
