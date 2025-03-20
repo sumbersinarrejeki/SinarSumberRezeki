@@ -356,29 +356,6 @@ body{
   .item4 {grid-area: 2 / span 1;}
   .item5 {grid-area: 3 / span 6;}
 }
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column; /* Susun elemen secara vertikal */
-    text-align: center;
-    height: auto;
-    padding: 40px 5%;
-  }
-
-  .hero-text {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem; /* Ukuran font lebih kecil di mobile */
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: auto;
-  }
-}
 @media (max-width: 500px) {
   .input, .btn {
     width: 100%; /* Membuat input dan tombol memenuhi lebar layar */
