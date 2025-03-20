@@ -12,51 +12,46 @@ body {
   overflow-x: hidden; /* Mencegah geser ke samping */
 }
 
-/* HEADER */
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Logo di kiri, cart di kanan */
+  justify-content: space-between;
   padding: 15px 40px;
   background-color: #000;
   color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Pastikan header tidak melebar */
 }
 
-/* Grup Logo dan Nama */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 10px; /* Jarak antara logo dan teks */
+  gap: 15px; /* Tambahkan jarak antar elemen */
+  flex-grow: 1; /* Agar tetap di kiri */
 }
 
-/* Logo */
 .logo {
-  width: 50px; /* Ukuran logo */
+  width: 50px;
   height: auto;
 }
 
-/* Judul */
 .brand-title {
   font-size: 20px;
   font-weight: bold;
-  text-transform: uppercase;
-  white-space: nowrap; /* Biar tidak turun ke bawah */
+  white-space: nowrap;
 }
 
-/* Cart */
 .cart {
   display: flex;
   align-items: center;
   gap: 5px;
-  cursor: pointer;
 }
 
-/* Icon Keranjang */
 .cart-icon {
   font-size: 20px;
 }
 
-/* Angka dalam Keranjang */
 .cart-count {
   background-color: red;
   color: white;
@@ -70,20 +65,6 @@ body {
   border-radius: 50%;
 }
 
-
-/* Angka di Keranjang */
-.cart-count {
-  background-color: red;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
 
 /* HERO SECTION */
 .hero {
