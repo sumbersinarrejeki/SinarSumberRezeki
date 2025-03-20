@@ -353,3 +353,7 @@ body{
   .item5 {grid-area: 3 / span 6;}
 }
 
+.container {
+  width: 100%;
+  max-width: 900px; /* ✅ Menyesuaikan layar */
+}
