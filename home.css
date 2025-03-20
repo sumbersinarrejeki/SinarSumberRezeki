@@ -9,6 +9,7 @@ body {
   background-color: #000;
   font-family: Arial, sans-serif;
   color: white;
+  overflow-x: hidden; /* Mencegah geser ke samping */
 }
 
 /* HEADER */
@@ -19,7 +20,7 @@ body {
   padding: 15px 40px;
   background-color: #000;
   color: white;
-  flex-wrap: wrap; /* Supaya elemen tidak bertabrakan di layar kecil */
+  flex-wrap: wrap;
 }
 
 .header-content {
@@ -67,8 +68,8 @@ body {
   justify-content: space-between;
   height: 100vh;
   padding: 20px;
-  background: #000;
-  flex-wrap: wrap; /* Agar tetap rapi di layar kecil */
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .hero-text {
@@ -79,17 +80,15 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #fff;
 }
 
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   opacity: 0.8;
-  color: #fff;
 }
 
 .hero-text a {
@@ -97,7 +96,6 @@ body {
   padding: 12px 24px;
   font-size: 1rem;
   color: white;
-  background: none;
   border: 2px solid white;
   text-decoration: none;
   border-radius: 50px;
@@ -120,55 +118,19 @@ body {
   width: 100%;
   max-width: 450px;
   height: auto;
-  object-fit: cover;
   border-radius: 8px;
-}
-
-/* FORM */
-.form {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.input {
-  width: 100%;
-  max-width: 450px;
-  height: 50px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.btn {
-  width: 100%;
-  max-width: 150px;
-  height: 50px;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  color: black;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: gray;
 }
 
 /* FOOTER */
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  max-width: 900px;
-  margin: auto;
   padding: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   text-align: center;
-  flex-wrap: wrap; /* Supaya rapi di layar kecil */
+  flex-wrap: wrap;
 }
 
 /* RESPONSIVE DESIGN */
@@ -225,101 +187,4 @@ body {
   .btn {
     width: 100%;
   }
-}
-body {
-  overflow-x: hidden;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Mencegah elemen keluar dari layar */
-body {
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-}
-
-/* Pastikan gambar tidak lebih besar dari layar */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Responsif untuk Header */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background-color: #000;
-    color: white;
-    flex-wrap: wrap;
-}
-
-.header-content h1 {
-    font-size: 20px;
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: center;
-    padding: 20px;
-}
-
-.hero-text {
-    flex: 1;
-    max-width: 100%;
-}
-
-.hero-text h1 {
-    font-size: 2rem;
-}
-
-.hero-text a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 50px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-}
-
-/* Responsif untuk HP */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text {
-        max-width: 90%;
-    }
-
-    .hero-image img {
-        max-width: 100%;
-    }
 }
