@@ -1,61 +1,35 @@
-/* PRESETS  */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-ul {
-  list-style: none;
-}
-
-li {
-  text-decoration: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/*   KEYFRAMES */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-body{
+body {
   background-color: #000;
+  font-family: Arial, sans-serif;
+  color: white;
 }
-
-/* HEADER  */
 
 /* HEADER */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 40px; /* Tambahkan padding agar lebih lebar */
-  background-color: #000000; /* Warna background */
+  padding: 15px 40px;
+  background-color: #000;
   color: white;
+  flex-wrap: wrap; /* Supaya elemen tidak bertabrakan di layar kecil */
 }
 
-/* LOGO + TEKS */
 .header-content {
   display: flex;
   align-items: center;
-  gap: 15px; /* Jarak antara logo dan teks */
+  gap: 15px;
 }
 
 .logo {
-  width: 60px; /* Sesuaikan ukuran logo */
+  width: 60px;
   height: auto;
 }
 
@@ -71,11 +45,6 @@ body{
   align-items: center;
   gap: 10px;
   cursor: pointer;
-  margin-right: 20px; /* Jarak cart dari sisi kanan */
-}
-
-.cart-icon {
-  font-size: 20px;
 }
 
 .cart-count {
@@ -91,211 +60,33 @@ body{
   border-radius: 50%;
 }
 
-
-/* MAIN  */
-
-.main {
-  color: #fff;
-  text-align: center;
-  margin-top: 0px;
-  animation: fade-in 0.4s 0.1s backwards;
-  
-}
-
-.heading {
-  font-size: 65px;
-  font-weight : 700;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 25px;
-  line-height: 0.9;
-}
-.text {
-  max-width: 630px;
-  font-size: 25px;
-  line-height: 1.4;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0.7;
-  
-}
-
-.form {
-  margin-top: 40px;
-}
-.input {
-  width: 511px;
-  height: 64px;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  opacity: 0.8;
-  font: inherit;
-  padding: 0;
-  padding-left: 10px;
-  font-size: 17px;
-  transition: all 0.3s;
-  
-}
-.input:focus {
-  opacity: 1;
-}
-.input::placeholder {
-  color: #000;
-}
-.btn {
-  height: 64px;
-  width: 130px;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  background-color: #000;
-  font: inherit;
-  margin-left: 5px;
-  text-transform: uppercase;
-  letter-spacing: 1;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.3s;
-}
-
-.btn:hover {
-  cursor: pointer;
-  background-color: #353535;
-}
-
-/* FOOTER */
-
-.footer {
-  display: flex;
-  align-items: center;
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #fff;
-  opacity: 0.8;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-top: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  animation: fade-in 0.4s 0.2s backwards;
-  
-}
-
-/* MEDIA QUERIES */
-@media (max-width : 985px) {
- 
-  body {
-    background-size: auto;
-    background-position: center;
-     background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: darken;
-    overflow-x: hidden;
-    
-  }
-  .header {
-  width: 100%; /* Membuat header memenuhi layar */
-  padding: 15px 20px; /* Menyesuaikan padding */
-}
-  
-  .heading {
-    font-size: 55px;
-    width: 450px;
-  }
-  .text {
-    font-size: 15px;
-    width: 380px;
-  }
-  
-  .input {
-    width:450px;
-    height: 54px;
-  }
-  .btn {
-    width: 100px;
-    height: 54px;
-  }
-  .footer {
-    margin-top: auto;
-    width: 600px;
-  }
-}
-
-@media (max-width: 650px) {
-  .header {
-    flex-direction: column;
-    
-  }
-  .nav {
-    padding: 0;
-  }
-  
-  .heading {
-    font-size: 40px;
-    width: 450px;
-  }
-  .input {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-  .btn {
-    display: block;
-    width: 450px;
-    margin: 0 auto;
-  }
-  .footer {
-  width: 100%;
-  max-width: 900px;
-  padding: 10px 20px;
-  text-align: center;
-  flex-direction: column;
-}
-
-}
-
-@media (max-width: 500px) {
-  .header {
-    width: 350px;
-    margin: 0 auto;
-  }
-  
-  .footer {
-    flex-direction: column;
-  }
-}
+/* HERO SECTION */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100vh;
-  padding: 0 10%;
-  background: #000000; 
+  padding: 20px;
+  background: #000;
+  flex-wrap: wrap; /* Agar tetap rapi di layar kecil */
 }
 
 .hero-text {
   flex: 1;
   max-width: 50%;
   text-align: left;
+  padding: 20px;
 }
 
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: left;
   color: #fff;
 }
 
-.hero-text h1 span {
-  display: block; /* Membuat teks di dalam span turun ke bawah */
-}
 .hero-text p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
   opacity: 0.8;
   color: #fff;
@@ -303,8 +94,8 @@ body{
 
 .hero-text a {
   display: inline-block;
-  padding: 14px 28px;
-  font-size: 1.1rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   color: white;
   background: none;
   border: 2px solid white;
@@ -315,7 +106,7 @@ body{
 
 .hero-text a:hover {
   background: white;
-  color: #0e1a14;
+  color: #000;
 }
 
 .hero-image {
@@ -326,45 +117,112 @@ body{
 }
 
 .hero-image img {
-  width: 550px;
-  height: 400px;
-  object-fit: cover; /* Agar gambar tidak terdistorsi */
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
   border-radius: 8px;
 }
 
-/* Responsif */
-@media only screen and (max-width: 600px) {
-  .item1 {grid-area: 1 / span 6;}
-  .item2 {grid-area: 2 / span 6;}
-  .item3 {grid-area: 3 / span 6;}
-  .item4 {grid-area: 4 / span 6;}
-  .item5 {grid-area: 5 / span 6;}
+/* FORM */
+.form {
+  margin-top: 40px;
+  text-align: center;
 }
 
-@media only screen and (min-width: 600px) {
-  .item1 {grid-area: 1 / span 6;}
-  .item2 {grid-area: 2 / span 1;}
-  .item3 {grid-area: 2 / span 4;}
-  .item4 {grid-area: 3 / span 6;}
-  .item5 {grid-area: 4 / span 6;}
+.input {
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-@media only screen and (min-width: 768px) {
-  .item1 {grid-area: 1 / span 6;}
-  .item2 {grid-area: 2 / span 1;}
-  .item3 {grid-area: 2 / span 4;}
-  .item4 {grid-area: 2 / span 1;}
-  .item5 {grid-area: 3 / span 6;}
+.btn {
+  width: 100%;
+  max-width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.btn:hover {
+  background-color: gray;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  flex-wrap: wrap; /* Supaya rapi di layar kecil */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 @media (max-width: 500px) {
-  .input, .btn {
-    width: 100%; /* Membuat input dan tombol memenuhi lebar layar */
+  .hero-text h1 {
+    font-size: 1.8rem;
   }
 
-  .btn {
-    margin-left: 0; /* Hapus margin kiri agar tombol tidak bergeser */
+  .hero-text p {
+    font-size: 0.9rem;
   }
-}
-html {
-  touch-action: manipulation;
+
+  .hero-text a {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .input,
+  .btn {
+    width: 100%;
+  }
 }
