@@ -16,38 +16,48 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Supaya elemen kiri dan kanan sejajar */
   padding: 15px 40px;
   background-color: #000;
   color: white;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Mencegah pindah ke baris baru */
 }
 
-.header-content {
+/* Grup Logo dan Nama */
+.header-left {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px; /* Jarak antara logo dan teks */
 }
 
+/* Logo */
 .logo {
-  width: 60px;
+  width: 50px; /* Sesuaikan ukuran */
   height: auto;
 }
 
-.header-content h1 {
-  font-size: 24px;
+/* Judul */
+.header-left h1 {
+  font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
+  white-space: nowrap; /* Mencegah teks turun ke baris baru */
 }
 
-/* CART */
+/* Cart */
 .cart {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   cursor: pointer;
 }
 
+/* Icon Cart */
+.cart-icon {
+  font-size: 20px;
+}
+
+/* Angka di Keranjang */
 .cart-count {
   background-color: red;
   color: white;
