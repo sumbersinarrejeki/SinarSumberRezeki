@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-/* PRESETS */
-=======
-/* RESET */
->>>>>>> a0794c272474602666143bf65e02615e674ff077
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
+
 ul {
   list-style: none;
 }
@@ -38,7 +33,7 @@ body {
 }
 
 /* HEADER */
-=======
+
 body {
   background-color: #000;
   font-family: Arial, sans-serif;
@@ -46,14 +41,12 @@ body {
   overflow-x: hidden; /* Mencegah geser ke samping */
 }
 
->>>>>>> a0794c272474602666143bf65e02615e674ff077
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
   background-color: #000;
-<<<<<<< HEAD
 }
 
 .header-content {
@@ -64,7 +57,6 @@ body {
 
 .logo {
   width: 60px;
-=======
   color: white;
   width: 100%;
   max-width: 1200px;
@@ -80,7 +72,6 @@ body {
 
 .logo {
   width: 50px;
->>>>>>> a0794c272474602666143bf65e02615e674ff077
   height: auto;
 }
 
@@ -93,13 +84,10 @@ body {
 .cart {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   gap: 10px;
   cursor: pointer;
   margin-right: 20px;
-=======
   gap: 5px;
->>>>>>> a0794c272474602666143bf65e02615e674ff077
 }
 
 .cart-count {
@@ -424,7 +412,7 @@ body {
 }
 
 
-<<<<<<< HEAD
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .hero {
@@ -437,7 +425,7 @@ body {
 
   .hero-image img {
     width: 90%;
-=======
+
 /* HERO SECTION */
 .hero {
   display: flex;
@@ -521,12 +509,10 @@ body {
     flex-direction: column;
     text-align: center;
     height: auto;
->>>>>>> a0794c272474602666143bf65e02615e674ff077
   }
 
   .hero-text {
     max-width: 100%;
-<<<<<<< HEAD
     text-align: left;
     
   }
@@ -613,56 +599,6 @@ body {
 
 }
 
-/* @media (max-width: 650px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
-  .heading {
-    font-size: 40px;
-  }
-  .footer {
-    width: 100%;
-    text-align: center;
-    flex-direction: column;
-    padding: 10px 20px;
-=======
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .hero-image img {
-    max-width: 300px;
-  }
-
-  .footer {
-    flex-direction: column;
-    text-align: center;
->>>>>>> a0794c272474602666143bf65e02615e674ff077
-  }
-}
-
-@media (max-width: 500px) {
-<<<<<<< HEAD
-  .header {
-    width: 100%;
-    padding: 10px 15px;
-  }
-  .input, .btn {
-    width: 100%;
-  }
-  .btn {
-    margin-left: 0;
-  } */
-/* } */
-=======
   .hero-text h1 {
     font-size: 1.8rem;
   }
@@ -681,4 +617,5 @@ body {
     width: 100%;
   }
 }
->>>>>>> a0794c272474602666143bf65e02615e674ff077
+
+}
