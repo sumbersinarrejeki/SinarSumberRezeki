@@ -21,6 +21,11 @@ h2 {
 p {
     color: #000000;
 }
+
+.about{
+  margin-bottom: 15px;
+}
+
 .content {
     display: flex;
     align-items: center;
@@ -45,9 +50,7 @@ p {
     margin-top: 20px;
     border-radius: 5px;
 }
-.btn:hover {
-    background-color: rgb(255, 255, 255);
-}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -97,6 +100,7 @@ p {
     color: rgb(255, 255, 255);
     padding: 40px 20px;
     text-align: left;
+    margin-top: 26px;
   }
   
   .footer-container {
@@ -183,3 +187,35 @@ p {
     font-size: 14px;
     color: #ffffff;
   }
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 16px;
+  background-color: #000;
+}
+
+.header-content {
+  display: flex;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.header-content h1 {
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  
+}
+  

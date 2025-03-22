@@ -416,7 +416,7 @@ h1 {
   position: fixed;
   top: 50px;
   right: 20px;
-  background: rgb(0, 0, 0);
+  background: rgb(244, 0, 0);
   border: 1px solid #ccc;
   padding: 20px;
   width: 250px;
@@ -535,4 +535,42 @@ h1 {
   font-weight: bold;
   color: #333;
   margin-top: 5px;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px ;
+    background-color: #000;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .logo {
+    width: 40px;
+    height: auto;
+  }
+  
+  .header-content h1 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .cart {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  cursor: pointer;
+ 
+}
 }

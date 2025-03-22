@@ -521,3 +521,42 @@ h1 {
 .buy-button:hover {
     background-color: #e69520;
 }
+
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px ;
+    background-color: #000;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .logo {
+    width: 40px;
+    height: auto;
+  }
+  
+  .header-content h1 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .cart {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  cursor: pointer;
+ 
+}
+}
