@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/02138bd525.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
+    
   <header class="header">
         <div class="header-content">
             <img src="logo4.jpg" alt="Logo SSR" class="logo">
@@ -20,6 +20,12 @@
             <span class="cart-count">0</span>
         </div>
     </header>
+    <!-- Shopping Cart Popup -->
+    <div class="cart-popup" id="cart-popup">
+        <h3>Keranjang Belanja</h3>
+        <div class="cart-items"></div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
     <section class="hero">
         <div class="hero-text">
             <h1>Selamat Datang <span>di Website Kami</span></h1>
@@ -32,14 +38,6 @@
             <img src="bg web.jpeg" alt="Gambar Hero">
         </div>
     </section>
-    
-    <!-- Shopping Cart Popup -->
-    <div class="cart-popup" id="cart-popup">
-        <h3>Keranjang Belanja</h3>
-        <div class="cart-items"></div>
-        <button class="checkout-btn" onclick="checkout()">Checkout</button>
-    </div>
-       
     </div>
     
    <script>
@@ -135,28 +133,3 @@ function checkout() {
 });
   </script>
 </body>
-=======
-
-
-
-    
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Selamat Datang <span>di Website Kami</span></h1>
-                <p>Temukan berbagai produk terbaik dengan penawaran menarik. Yuk, mulai belanja sekarang!</p>
-                <a href="menu barang .html" class="btn">Lihat Produk</a>
-                <a href="about.html" class="btn">About</a>
-            </div>
-            <div class="hero-image">
-                <img src="bg web.jpeg" alt="Gambar Hero">
-            </div>
-        </section>
-    </main>
-    
-    <!-- Popup untuk menampilkan isi keranjang -->
-    <div class="cart-popup" id="cart-popup">
-        <div class="cart-items"></div>
-    </div>
-</body>
->>>>>>> a0794c272474602666143bf65e02615e674ff077
