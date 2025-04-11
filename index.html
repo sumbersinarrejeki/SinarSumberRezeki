@@ -1,135 +1,83 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinar Sumber Rezeki</title>
-    <link rel="stylesheet" href="home.css">
-    <script src="https://kit.fontawesome.com/02138bd525.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sinar Sumber Rezeki</title>
+  <link rel="stylesheet" href="home.css" />
+  <script src="https://kit.fontawesome.com/02138bd525.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+  <!-- Header -->
   <header class="header">
-        <div class="header-content">
-            <img src="logo4.jpg" alt="Logo SSR" class="logo">
-            <h1>SINAR SUMBER REZEKI</h1>
-        </div>
-        <div class="cart" onclick="toggleCart()">
-            <i class="fas fa-shopping-cart cart-icon"></i>
-            <span class="cart-count">0</span>
-        </div>
-    </header>
-    <!-- Shopping Cart Popup -->
-    <div class="cart-popup" id="cart-popup">
-        <h3>Keranjang Belanja</h3>
-        <div class="cart-items"></div>
-        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    <div class="header-content">
+      <img src="logo4.jpg" alt="Logo SSR" class="logo" />
+      <h1>SINAR SUMBER REZEKI</h1>
     </div>
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Selamat Datang <span>di Website Kami</span></h1>
-            <p>Temukan berbagai produk terbaik dengan penawaran menarik. Yuk, mulai belanja sekarang!</p>
-            <a href="menu.html">Lihat Produk</a>
-            <a href="about.html">about</a>
-
-        </div>
-        <div class="hero-image">
-          <img src="background web.jpeg" alt="Gambar Hero">
-        </div>
-    </section>
+    <div class="cart" onclick="toggleCart()">
+      <i class="fas fa-shopping-cart cart-icon"></i>
+      <span class="cart-count">0</span>
     </div>
-    
-   <script>
-    let cart = [];
-const whatsappNumber = "6282146169266"; 
+  </header>
 
-function updatePrice(selectElement) {
-  let selectedPrice = selectElement.value;
-  let productCard = selectElement.closest(".product-card");
-  let priceDisplay = productCard.querySelector(".modal-product-price");
-  priceDisplay.textContent = "Rp " + parseInt(selectedPrice).toLocaleString("id-ID");
-}
+  <!-- Shopping Cart Popup -->
+  <div class="cart-popup" id="cart-popup">
+    <h3>Keranjang Belanja</h3>
+    <div class="cart-items"></div>
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+  </div>
 
-function addToCart(button) {
-  let productCard = button.closest(".product-card");
-  let productName = productCard.querySelector(".product-name").textContent;
-  let productPrice = productCard.querySelector(".modal-product-price").textContent;
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-box">
+      <h1>Selamat Datang di Website Kami</h1>
+      <p>Rumah yang lebih baik dengan atap yang lebih baik</p>
+      <div class="hero-buttons">
+        <a href="menu.html">Lihat Produk</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </section>
 
-  cart.push({ name: productName, price: productPrice });
-
-  updateCart();
-  toggleCart(); // Buka keranjang otomatis setelah menambahkan item
-}
-
-
-function updateCart() {
-  document.querySelector(".cart-count").textContent = cart.length;
-  let cartItems = document.querySelector(".cart-items");
-  cartItems.innerHTML = cart.map((item, index) => 
-      `<div>${item.name} - ${item.price} <button onclick="removeFromCart(${index})">❌</button></div>`
-  ).join("");
-}
-
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
-
-function toggleCart() {
-  let cartPopup = document.getElementById("cart-popup");
-  if (cartPopup) {
-      cartPopup.classList.toggle("show");
-  } else {
-      console.error("Elemen cart-popup tidak ditemukan!");
-  }
-}
-
-
-function checkout() {
-  let message = "Halo, saya ingin membeli:\n" + cart.map((item, i) => `${i+1}. ${item.name} - ${item.price}`).join("\n");
-  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
-}
-
- </script>
- <script>
- </script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Scripts -->
   <script>
-      var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 1, 
-          spaceBetween: 20, 
-          loop: true,
-          navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-          },
-          pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-          },
-          breakpoints: {
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-          }
-      });
+    let cart = [];
+    const whatsappNumber = "6282146169266";
 
-      document.addEventListener("DOMContentLoaded", function () {
-  var productImageSliders = document.querySelectorAll(".product-image-slider");
+    function updateCart() {
+      document.querySelector(".cart-count").textContent = cart.length;
+      const cartItems = document.querySelector(".cart-items");
+      cartItems.innerHTML = cart.map((item, i) =>
+        `<div>${item.name} - ${item.price} <button onclick="removeFromCart(${i})">❌</button></div>`
+      ).join("");
+    }
 
-  productImageSliders.forEach(function (slider) {
-      new Swiper(slider, {
-          loop: true,
-          navigation: {
-              nextEl: slider.querySelector(".swiper-button-next"),
-              prevEl: slider.querySelector(".swiper-button-prev"),
-          },
-          pagination: {
-              el: slider.querySelector(".swiper-pagination"),
-              clickable: true,
-          },
-      });
-  });
-});
+    function addToCart(button) {
+      const card = button.closest(".product-card");
+      const name = card.querySelector(".product-name").textContent;
+      const price = card.querySelector(".modal-product-price").textContent;
+      cart.push({ name, price });
+      updateCart();
+      toggleCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function toggleCart() {
+      const popup = document.getElementById("cart-popup");
+      popup.classList.toggle("show");
+    }
+
+    function checkout() {
+      const message = cart.map((item, i) =>
+        `${i + 1}. ${item.name} - ${item.price}`
+      ).join("\n");
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Halo, saya ingin membeli:\n" + message)}`);
+    }
   </script>
 </body>
+</html>
